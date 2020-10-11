@@ -1,0 +1,22 @@
+version: '3.5'
+services:
+
+  react-microservice:
+    image: github.com/mkadiri/react-microservice:local
+    container_name: react-microservice
+    environment:
+      - VIRTUAL_HOST=react-microservice.local.syrupme.net
+      - VIRTUAL_PORT=3000
+      - CHOKIDAR_USEPOLLING=true
+    volumes:
+      - ./app:/app
+      - /app/node_modules
+    ports:
+      - 3000:3000
+    stdin_open: true
+    tty: true
+
+networks:
+  default:
+    external:
+      name: auto

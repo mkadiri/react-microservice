@@ -8,6 +8,6 @@ COPY app /app
 RUN \
     apk add --update --no-cache git && \
     npm install --silent && \
-    npm install react-scripts@3.4.1 -g
+    npm install react-scripts@3.4.3 -g
 
 CMD ["npm", "start"]
